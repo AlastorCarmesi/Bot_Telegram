@@ -2,9 +2,11 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Hola soy tu bot, Hola mundo")
+async def say_hello(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("Hello World!, bot iniciado correctamente")
 
-    app = ApplicationBuilder().token("8626115500:AAFn4g4MADGi_iI-OyiS_X1rHAO5xo99tI8").build()
-    app.add_handler(CommandHandler("start", say_hello))
-    app.run_polling(allowing_updates=Update.ALL_TYPES)
+application = ApplicationBuilder().token("8626115500:AAEoxJrhlmjXAnGAuA3PzMMB5c8rHdPGOOQ").build()
+
+application.add_handler( CommandHandler( "start", say_hello ) )
+
+application.run_polling(allowed_updates=Update.ALL_TYPES)
