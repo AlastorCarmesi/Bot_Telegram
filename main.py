@@ -18,6 +18,5 @@ application = ApplicationBuilder().token(TK).build()
 
 application.add_handler( CommandHandler( "start", say_hello ) )
 application.add_handler( CommandHandler( "echo", echo ) )
-application.add_handler( CommandHandler( "help", say_hello ) )
 
 application.run_polling(allowed_updates=Update.ALL_TYPES)
